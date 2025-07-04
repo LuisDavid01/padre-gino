@@ -1,21 +1,18 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client'
-import Order from "./order.jsx";
-import PizzaOfTheDay from './PizzaOfTheDay.jsx';
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { RouterProvider, createRouter } from "@tanstack/react-router";
+import { routeTree } from "./routeTree.gen";
 
+
+const router = createRouter({ routeTree });
 const App = () => {
-    return (
-        <StrictMode>
-            <div>
-        <h1 className="logo">Padre Gino's - Order Now</h1>
-        <Order />
-        <PizzaOfTheDay/>
-       </div>
-        </StrictMode>
-       
-    )
-}
+  return (
+    <StrictMode>
+      <RouterProvider router={router} />
+    </StrictMode>
+  );
+};
 
-const container = document.getElementById("root")
-const root = createRoot(container)
-root.render(<App/>)
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<App />);
