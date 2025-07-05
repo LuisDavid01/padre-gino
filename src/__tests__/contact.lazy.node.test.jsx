@@ -14,7 +14,7 @@ test("can submit contact form", async () => {
   const screen = render(
     <QueryClientProvider client={queryClient}>
       <Route.options.component />
-    </QueryClientProvider>
+    </QueryClientProvider>,
   );
 
   const nameInput = screen.getByPlaceholderText("Name");

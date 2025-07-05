@@ -62,7 +62,7 @@ test("snapshot with some stuff in cart", () => {
           price: "$12.75",
         },
       ]}
-    />
+    />,
   );
   expect(asFragment()).toMatchSnapshot();
 });
